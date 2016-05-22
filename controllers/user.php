@@ -1,6 +1,10 @@
 <?php
-require_once 'models/user.php';
+require 'models/user.php';
 class UserController {
+	
+	function index(){
+		require "views/welcome.php";
+	}
 	
 	function loginform(){
 		require 'views/loginform.php';
@@ -18,9 +22,9 @@ class UserController {
 		$user = new User();
 		if($user->login(array('username'=>$username,'password'=>$password))){
 			//require("views/profile.php");
-			header("Location:http://localhost/mvc/index.php?action=user.profile");
+			header("Location:http://localhost/bootstrap-example/index.php?action=user.profile");
 		}else{
-			header("Location:http://localhost/mvc/index.php?action=user.loginform&errorcode=1");
+			header("Location:http://localhost/bootstrap-example/index.php?action=user.loginform&errorcode=1");
 		}
 		
 	}

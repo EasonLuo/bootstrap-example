@@ -13,7 +13,7 @@ class Database {
 	 * @param array $config  if $config is not given, use the default config file:db.ini      	
 	 */
 	function __construct($config = array()) {
-		$dsn = "mysql:host=" . $config ['server'] . ";" . "dbname=" . $config ['database'];
+		$dsn = "mysql:host=" . $config ['server'] . ";" . "dbname=" . $config ['dbname'];
 		$this->db = new PDO ( $dsn, $config ['username'], $config ['password'], array (
 				PDO::ATTR_PERSISTENT => true 
 		) );
